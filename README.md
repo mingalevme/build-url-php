@@ -9,7 +9,7 @@ Advanced version of http_build_url
 
 # Installation
 
-1. ```composer require mingalevme/http_build_url```.
+1. ```composer require mingalevme/http-build-url```.
 
 2. Now you are able to use the tool:
 ```php
