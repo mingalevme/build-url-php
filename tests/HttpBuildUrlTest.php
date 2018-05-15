@@ -126,6 +126,13 @@ class HttpBuildUrlTest extends TestCase
                     'F' => 'github',
                 ],
             ],
+            [
+                'github.com/mingalevme/http-build-url',
+                'https://github.com/mingalevme/http-build-url',
+                [
+                    's' => null,
+                ],
+            ],
         ];
     }
 
