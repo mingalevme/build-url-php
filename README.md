@@ -4,6 +4,9 @@ Advanced version of http_build_url
 # Travis CI
 [![Build Status](https://travis-ci.org/mingalevme/http_build_url.svg?branch=master)](https://travis-ci.org/mingalevme/http_build_url)
 
+# Codecov
+[![codecov](https://codecov.io/gh/mingalevme/http-build-url/branch/master/graph/badge.svg)](https://codecov.io/gh/mingalevme/http-build-url)
+
 # Installation
 
 1. ```composer require mingalevme/http_build_url```.
