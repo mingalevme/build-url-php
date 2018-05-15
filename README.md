@@ -1,8 +1,8 @@
-# http_build_url
+# http-build-url
 Advanced version of http_build_url
 
 # Travis CI
-[![Build Status](https://travis-ci.org/mingalevme/http_build_url.svg?branch=master)](https://travis-ci.org/mingalevme/http_build_url)
+[![Build Status](https://travis-ci.org/mingalevme/http-build-url.svg?branch=master)](https://travis-ci.org/mingalevme/http-build-url)
 
 # Codecov
 [![codecov](https://codecov.io/gh/mingalevme/http-build-url/branch/master/graph/badge.svg)](https://codecov.io/gh/mingalevme/http-build-url)
@@ -15,21 +15,21 @@ Advanced version of http_build_url
 ```php
 <?php
 
-echo build_url('//github.com/mingalevme/http_build_url', [
+echo build_url('//github.com/mingalevme/http-build-url', [
     's' => 'https', // s (scheme): set scheme only if not presented
-]); // https://github.com/mingalevme/http_build_url
+]); // https://github.com/mingalevme/http-build-url
 
-echo build_url('http://github.com/mingalevme/http_build_url', [
+echo build_url('http://github.com/mingalevme/http-build-url', [
     'S' => 'https', // S (SCHEME): force set scheme
-]); // https://github.com/mingalevme/http_build_url
+]); // https://github.com/mingalevme/http-build-url
 
-echo build_url('https://github.com/mingalevme/http_build_url', [
+echo build_url('https://github.com/mingalevme/http-build-url', [
     'h' => 'bitbucket.org', // h (host): set host only if not presented
-]); // https://github.com/mingalevme/http_build_url
+]); // https://github.com/mingalevme/http-build-url
 
-echo build_url('https://github.com/mingalevme/http_build_url', [
+echo build_url('https://github.com/mingalevme/http-build-url', [
     'H' => 'bitbucket.org', // H (HOST): force set host
-]); // https://github.com/mingalevme/http_build_url
+]); // https://bitbucket.org/mingalevme/http-build-url
 ```
 
 # Usage
