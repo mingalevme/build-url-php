@@ -9,7 +9,7 @@ class HttpBuildUrl
     /**
      * Build an URL
      *
-     * @param string|array $url Base url or parts of the url (aliases is not supported), to build from scratch use any falsy value, e.g. [], null or ''
+     * @param string|array $url Base url or parts of the url (aliases is not supported), to build from scratch use (!) an empty array, not empty string
      * @param array $replacement [optional] Associative array like parse_url() returns
      * @param array &$newUrlParts [optional] If set, it will be filled with the parts of the composed url like parse_url() would return
      * @return string The new URL string
