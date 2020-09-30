@@ -56,7 +56,7 @@ class HttpBuildUrl
 
             if ($value === null) {
 
-                unset($parts[$key]);
+                unset($parts[strtolower($key)]);
 
             } elseif ($key === strtoupper($key) || isset($parts[$key]) == false) {
 
