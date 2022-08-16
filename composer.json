@@ -13,7 +13,7 @@
     "php" : ">=5.4.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~6.0"
+    "phpunit/phpunit": ">=4.0"
   },
   "autoload": {
     "psr-4": {
@@ -27,5 +27,8 @@
     "psr-4": {
       "Mingalevme\\Tests\\HttpBuildUrl\\": "tests/"
     }
+  },
+  "config": {
+    "secure-http": false
   }
 }

@@ -43,14 +43,23 @@ class HttpBuildUrl
             }
         }
 
-        /**
-         * Parse the original URL
-         */
+        /* Parse the original URL*/
         $parts = is_array($url)
             ? $url
             : parse_url(trim($url));
 
-        $isSchemaless = is_string($url) && isset($parts['scheme']) === false && substr($url, 0, 2) === '//';
+        if ($parts === false) {
+            return $url;
+        }
+
+        $isSchemaless = is_string($url) && empty($parts['scheme']) && self::strStartsWith($url, '//');
+
+        # https://github.com/php/php-src/issues/7890
+        if ($isSchemaless && !empty($parts['port']) && !empty($parts['host'])) {
+            if (!self::strStartsWith($url, "//{$parts['host']}:{$parts['port']}")) {
+                unset($parts['port']);
+            }
+        }
 
         foreach ($replacement as $key => $value) {
 
@@ -100,6 +109,16 @@ class HttpBuildUrl
             .((isset($parts['query']) && $parts['query']) ? '?' . $parts['query'] : '')
             .((isset($parts['fragment'])) ? '#' . $parts['fragment'] : '')
         ;
+    }
+
+    /**
+     * @param string $haystack
+     * @param string $needle
+     * @return bool
+     */
+    protected static function strStartsWith($haystack, $needle)
+    {
+        return substr($haystack, 0, strlen($needle)) === $needle;
     }
 }
 

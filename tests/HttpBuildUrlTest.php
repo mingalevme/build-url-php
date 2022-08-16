@@ -142,4 +142,18 @@ class HttpBuildUrlTest extends TestCase
             's' => 'https',
         ]));
     }
+
+    # https://github.com/php/php-src/issues/7890
+    public function testIssues7890()
+    {
+        if (version_compare(PHP_VERSION, '7.4.0', '<')) {
+            $this->assertSame('//www.example.com/ddd:65535/', HttpBuildUrl::build('//www.example.com/ddd:65535/', [
+                's' => 'https',
+            ]));
+        } else {
+            $this->assertSame('https://www.example.com/ddd:65535/', HttpBuildUrl::build('//www.example.com/ddd:65535/', [
+                's' => 'https',
+            ]));
+        }
+    }
 }
